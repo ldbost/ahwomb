@@ -1,0 +1,23 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: password
+  host: localhost
+
+
+development:
+  <<: *default
+  database: ahwomb_development
+
+
+test:
+  <<: *default
+  database: ahwomb_test
+
+
+production:
+  <<: *default
+  database: ahwomb_production
